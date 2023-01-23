@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <div class="first">
+            <input type="number" id="input1" placeholder="Countdown From"> <br>
+            <input type="number" id="input2" placeholder="Countdown To">
+            <button onclick="count()">COUNTDOWN</button>
+        </div>
+        <div class="second">
+            <h1 id="show"></h1>
+        </div>
+    </main>
+
+    <script>
+        // let the_figure = ""
+        let firstNumber = document.getElementById("input1");
+        let secondNumber = document.getElementById("input2");
+
+        function count() {
+            if(firstNumber.value == secondNumber.value) {
+                alert("Invalid Operation")
+            }else if (firstNumber.value < secondNumber.value){
+                alert("Invalid Operation")
+            }else if (Number(firstNumber.value ) > Number(secondNumber.value) ){
+               let you = setInterval(() => {
+                    firstNumber.value--
+
+                    show.innerHTML = firstNumber.value
+                    let me = firstNumber.value
+                    if (me == secondNumber.value){
+                        clearInterval(you)
+                        alert("TIME UP")
+                    }
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>
